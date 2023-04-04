@@ -1,0 +1,6 @@
+div>ul {
+    text-align: left;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 22px;
+}

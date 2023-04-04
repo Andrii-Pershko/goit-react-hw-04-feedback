@@ -1,0 +1,31 @@
+div>button:not(:last-child) {
+    margin-right: 10px;
+}
+
+div {
+    text-align: center;
+
+}
+
+div>button {
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px 15px;
+    border-radius: 15px;
+    border-color: transparent;
+    transition: all linear 0.2s;
+    background-color: orange;
+}
+
+div>button:hover {
+    -webkit-box-shadow: 0px 0px 100px 3px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 0px 100px 3px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 0.834);
+    background-color: rgb(255, 255, 255);
+    transition: all linear 0.2s;
+}
+
+div>button:active {
+    background-color: orange;
+    transition: all linear 0.05s;
+}
