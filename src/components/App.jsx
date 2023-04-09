@@ -9,8 +9,16 @@ const App = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const total = good + neutral + bad;
-  const percentPositive = total ? Number(((good * 100) / total).toFixed()) : 0;
+  const totalFeedBack = () => {
+    return good + neutral + bad;
+  };
+
+  const goodFeedbackInPercent = () => {
+    const percentPositive = totalFeedBack()
+      ? Number(((good * 100) / totalFeedBack()).toFixed())
+      : 0;
+    return percentPositive;
+  };
 
   const addFedbackPoint = ({ target }) => {
     switch (target.name) {
@@ -38,13 +46,13 @@ const App = () => {
       </Section>
 
       <Section title="Statistics">
-        {total ? (
+        {totalFeedBack() ? (
           <Statistics
             good={good}
             neutral={neutral}
             bad={bad}
             total={good + bad + neutral}
-            positivePercentage={percentPositive}
+            positivePercentage={goodFeedbackInPercent()}
           />
         ) : (
           <Notification message={'There is no feedback'} />
